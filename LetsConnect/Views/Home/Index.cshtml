@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lets Connect2World</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico">
+    <link href="~/Content/Front/Css/normalize.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/Front/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/Front/Css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/owl.theme.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/animate.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/slicknav.min.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/responsive.css">
+    <link rel="stylesheet" href="~/Content/Front/Css/main.css">
+
+
+
+    <script src="~/Scripts/Service/LcService.js"></script>
+    <script src="~/Scripts/Validations/Common/CommonValidation.js"></script>
+    <script src="~/Scripts/Controller/Inquiry/InquiryController.js"></script>
+
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <section class="intro" id="home">
+        <div class="menu-bar menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="logo">
+                            <a href="">
+                                <img src="~/Content/Front/Images/logo.png" alt="" title="" height="30px" style="float: left;" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-unstyled" id="main-menu">
+                            <li><a class="active" href="#home">Home</a></li>
+                            <li><a href="#about-app">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Ends here -->
+        <div class="intro-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12 intro-image">
+                        <img src="~/Content/Front/Images/hand.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-xs-12 intro-texts">
+                        <h1 style="font-size:26px;">The Best Way To Predict Future Growth Is To Connect It.</h1>
+                        <span>The World Start With You. Let's Connect.</span>
+                        <ul class="list-unstyled">
+                            <li><a style="font-size: 35px;border: 3px solid #534F4E;" href="#about-app">Dream Launching Very Soon.!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-app" class="about-app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-7">
+                    <img class="wow slideInLeft" src="~/Content/Front/Images/left-mob-front.png" alt="" style="visibility: visible; animation-name: slideInLeft;">
+                    <img class="wow slideInUp" src="~/Content/Front/Images/left-mob-front-2.png" alt="" style="visibility: visible; animation-name: slideInUp;">
+
+                </div>
+                <div class="col-md-7 col-sm-5 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
+                    <h2>About Our Mission</h2>
+                    <h3>Responsible Team. Connect. Growth. </h3>
+                    <p>
+                        "We Know the Value Of You,<br>
+                        We Know The Value Of Connections,<br>
+                        Let’s Connect More  To Explore Best."
+
+                    </p>
+                    <p>
+                        We are a Great,Young,Responsible,Learning from problems,Passionate &amp; ENthuastic Team working for wellness Of All in Personnal,Social and Bussiness field.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About App Section Ends Here -->
+
+    <section class="footer">
+        <section class="contact" id="contact" ng-controller="InquiryController as ic">
+            <section id="content-page">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="alert alert-success alert-dismissible fade in" role="alert" id="isSuccessMsg">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <label id="SuccessMsg"></label>
+                            </div>
+                            <div class="alert alert-danger alert-dismissible fade in" role="alert" id="isErrorMsg">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <label id="ErrorMsg"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="wow fadeIn">Get In Touch</h2>
+                            <form action="">
+                                <input class="wow slideInLeft" ng-model="ic.Person.Name" type="text" name="" placeholder="Your Name" />
+                                <input class="wow slideInRight" ng-model="ic.Person.Email" type="text" name="" placeholder="Your Email" />
+
+                                <input class="wow slideInLeft" ng-change="ic.OnlyNumber()" ng-model="ic.Person.mobile" type="text" name="" placeholder="Mobile" />
+                                <input class="wow slideInRight" ng-model="ic.Person.Address" placeholder="Address" type="text" name="" />
+
+
+                                <textarea class="wow slideInLeft" ng-model="ic.Person.Message" name="" placeholder="Your Message"></textarea>
+                                @*<input class="wow slideInRight"  ng-click="SumbitInquiry(Person)"  type="submit" value="Send Message" />*@
+                                <div class="wow slideInRight" style="text-align: center; visibility: visible; animation-name: slideInRight;">
+                                    <div id="Submit" class="btn btn-default text-center" style="Width:250px;" ng-click="ic.SumbitInquiry(ic.Person)">
+                                        Send Message
+                                    </div>
+
+
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="loading">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <img src="~/Content/Template/Images/loading_128.gif" class="margin-top-17p" />
+                </div>
+
+            </section>
+        </section>
+
+    </section>
+    <!--Contact Section Ends Here-->
+
+    <section class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="wow fadeInUp">Lets Connect</p>
+                    <ul class="wow fadeInUp" class="list-unstyled">
+                        <li><a href="https://www.facebook.com/Lets-connect-742243059250037/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/letsconnnect"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://business.google.com/b/106985290466780129338/"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/Content/Front/Js/jquery_online.min.js"></script>
+    <script src="~/Content/Template/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/Front/Js/bootstrap.min.js"></script>
+    <script src="~/Content/Front/Js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+        //$(document).ready(function() {
+        //  $("#owl-example").owlCarousel({
+        //	items : 4,
+        //	navigation : false,
+        //	navigationText : ["prev","next"],
+        //	paginationNumbers: true
+        //  });
+        //   $("#testimonial-carousel").owlCarousel({
+        //	items : 1,
+        //	itemsCustom : true,
+        //	itemsDesktop : [1199,1],
+        //	itemsDesktopSmall : [980,1],
+        //	itemsTablet: [768,1],
+        //	itemsTabletSmall: true,
+        //	itemsMobile : [479,1],
+        //	singleItem : true,
+        //	itemsScaleUp : true,
+        //	responsive : true
+        //   });
+        //   $("#clients-logo").owlCarousel({
+        //	items : 6,
+        //	paginationNumbers : false,
+        //	navigation : false,
+        //   });
+        //});
+    </script>
+    <script src="~/Content/Front/Js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="~/Content/Front/Js/plugins.js"></script>
+    <script src="~/Content/Front/Js/main.js"></script>
+    <script type="text/javascript">
+        // handle links with  started with '#' only
+        $(document).on('click', 'a[href^="#"]', function (e) {
+            // target element id
+            var id = $(this).attr('href');
+            // target element
+            var $id = $(id);
+            if ($id.length === 0) {
+                return;
+            }
+            // prevent standard hash navigation (avoid blinking in IE)
+            e.preventDefault();
+            // top position relative to the document
+            var pos = $(id).offset().top;
+            // animated top scrolling
+            $('body, html').animate({ scrollTop: pos }, 1000);
+        });
+    </script>
+    <script type="text/javascript">
+        // Create a clone of the menu, right next to original.
+        $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').css('background', '#000').removeClass('original').hide();
+        scrollIntervalID = setInterval(stickIt, 10);
+        function stickIt() {
+            var orgElementPos = $('.original').offset();
+            orgElementTop = orgElementPos.top;
+            if ($(window).scrollTop() >= (orgElementTop)) {
+                // scrolled past the original position; now only show the cloned, sticky element.
+
+                // Cloned element should always have same left position and width as original element.
+                orgElement = $('.original');
+                coordsOrgElement = orgElement.offset();
+                leftOrgElement = coordsOrgElement.left;
+                widthOrgElement = orgElement.css('width');
+                $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
+                $('.original').css('visibility', 'hidden');
+            } else {
+                // not scrolled past the menu; only show the original menu.
+                $('.cloned').hide();
+                $('.original').css('visibility', 'visible');
+            }
+        }
+    </script>
+    <script src="~/Content/Front/Js/jquery.slicknav.min.js"></script>
+    <script>
+        $(function () {
+            $('#main-menu').slicknav();
+        });
+    </script>
+
+</body>
+</html>

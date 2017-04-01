@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB5A13B0-0F4E-4B56-8B35-2C840DCD2139}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LetsConnect.Services</RootNamespace>
+    <AssemblyName>LetsConnect.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\..\..\all final projects\baadam\Badam\bin\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\..\all final projects\baadam\Badam\bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\..\..\all final projects\baadam\Badam\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Filter\AuthFilter.cs" />
+    <Compile Include="Interface\IActivity\IActivityRepository.cs" />
+    <Compile Include="Interface\IAdministator\IAdministatorRepository.cs" />
+    <Compile Include="Interface\IBusinessCategory\IBusinessCategoryRepository.cs" />
+    <Compile Include="Interface\ICommon\IClaimsRepository.cs" />
+    <Compile Include="Interface\ICommon\ICommonRepository.cs" />
+    <Compile Include="Interface\IContact\IContactRepository.cs" />
+    <Compile Include="Interface\ICustomer\ICustomerRepository.cs" />
+    <Compile Include="Interface\IGroup\IGroupRepository.cs" />
+    <Compile Include="Interface\IInquiry\IInquiryRepository.cs" />
+    <Compile Include="Interface\IInvite\IInviteRepository.cs" />
+    <Compile Include="Interface\IMenu\IMenuRepository.cs" />
+    <Compile Include="Interface\IPermission\IPermissionRepository.cs" />
+    <Compile Include="Interface\IRating\IRatingRepository.cs" />
+    <Compile Include="Interface\IRole\IRoleRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RActivity\ActivityRepository.cs" />
+    <Compile Include="Repository\RAdministator\AdministatorRepository.cs" />
+    <Compile Include="Repository\RInquiry\InquiryRepository.cs" />
+    <Compile Include="Repository\RRating\RatingRepository.cs" />
+    <Compile Include="Repository\RBusinessCategory\BusinessCategoryRepository.cs" />
+    <Compile Include="Repository\RCommon\ClaimsRepository.cs" />
+    <Compile Include="Repository\RCommon\CommonRepository.cs" />
+    <Compile Include="Repository\RCommon\InfoMailRepository.cs" />
+    <Compile Include="Repository\RContact\ContactRepository.cs" />
+    <Compile Include="Repository\RCustomer\CustomerRepository.cs" />
+    <Compile Include="Repository\RGroup\GroupRepository.cs" />
+    <Compile Include="Repository\RInvite\InviteRepository.cs" />
+    <Compile Include="Repository\RMenu\MenuRepository.cs" />
+    <Compile Include="Repository\Role\RoleRepository.cs" />
+    <Compile Include="Repository\RPermission\PermissionRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\Mapping\" />
+    <Folder Include="Repository\RMapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LetsConnect.Core\LetsConnect.Core.csproj">
+      <Project>{B14CF530-E5B3-4B7D-A398-78B72927E1DE}</Project>
+      <Name>LetsConnect.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LetsConnect.Data\LetsConnect.Data.csproj">
+      <Project>{84c0821f-0c08-4e6e-b3ba-f9f6f821b300}</Project>
+      <Name>LetsConnect.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LetsConnect.Web.Framework\LetsConnect.Web.Framework.csproj">
+      <Project>{1D70BF88-9AB2-4AFF-BE3A-21B68F7A7BC7}</Project>
+      <Name>LetsConnect.Web.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

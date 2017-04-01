@@ -1,0 +1,380 @@
+﻿.margin_top_2 {
+    margin-top: 2%;
+}
+
+.padding_left_0 {
+    padding-left: 0;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #cdcdcd;
+    margin: 10px 0px;
+}
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+
+.text-capital {
+    text-transform: uppercase;
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+
+.about-images {
+    background-color: #cdcdcd;
+    padding: 1%;
+}
+
+.img-fullWidth {
+    width: 100%;
+}
+
+.color-cd-hover {
+    -webkit-transition: 1.5s ease;
+    transition: 1.5s ease;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+    .color-cd-hover:hover {
+        color: rgba(80, 80, 80, 0.75);
+        text-decoration-color: #cdcdcd;
+        -webkit-transition: 1.5s ease;
+        transition: 1.5s ease;
+        border-bottom: 2px solid #cdcdcd;
+    }
+
+.about-paragraph-minHeight {
+    height: 157px;
+    overflow: auto;
+    margin: 0 0 10px;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding0 {
+    padding: 0;
+}
+
+.map-padding {
+    padding: 10px !important;
+}
+
+.contact-ul-margin {
+    margin: 7px 0 0 0 !important;
+}
+
+.padding-top10 {
+    padding-top: 10px !important;
+}
+
+.margin_bottom_20 {
+    margin-bottom: 20px;
+}
+
+.contact_text {
+    color: #22A758;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+.offer-services {
+    padding: 0px 0;
+}
+
+.well {
+    background-color: transparent !important;
+}
+
+.header-font {
+    font-size: 35px;
+    color: #666;
+    margin: 2% 0;
+}
+
+.margin_3_0 {
+    margin: 3% 0;
+}
+
+.fix-menu {
+    border-bottom: 1px solid #000;
+    position: fixed;
+    width: 84.5%;
+    z-index: 99999;
+    top: 0;
+    background-color: #FFFFFF;
+    left: 9%;
+}
+
+.padding_right_0 {
+    padding-right: 0;
+}
+
+.container {
+    /*padding-right: 15px;
+    padding-left: 15px;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.offer-services .tab-content {
+    position: relative;
+}
+
+.contact-info {
+    padding: 10px 0;
+}
+
+.offer-services .tab-content ul {
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+
+.contact-info .con-det {
+    margin-top: 30px;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+
+    .contact-info .con-det li {
+        padding: 20px 10px;
+        background: #f6f6f6;
+        text-align: center;
+        display: block;
+    }
+
+.con_class_info {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list_style_none {
+    list-style: none;
+}
+
+
+
+.contact-info .con-det h6 {
+    text-transform: uppercase;
+    margin-top: 0px;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+
+
+.contact-info p {
+    font-size: 12px;
+    margin: 0px;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+
+
+.tab-content > .active {
+    display: block;
+    visibility: visible;
+}
+
+.tab-content > .tab-pane {
+    /*display: none;
+    visibility: hidden;*/
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+    display: none !important;
+}
+
+.slider_top {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.ul_menu {
+    margin-top: 58px;
+    background-color: #22A758;
+}
+
+.row_pagelayoutIn {
+    margin-top: 11%;
+}
+
+.logo_responsive {
+    width: 165px;
+    height: 110px;
+    margin-left: -7px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .responsiveDropdown {
+        margin-top: 58px !important;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .fix-menu {
+        width: 90%;
+        left: 6.5%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .row_pagelayoutIn {
+        margin-top: 14%;
+    }
+}
+
+
+
+@media only screen and (max-width: 980px) {
+    .fix-menu {
+        width: 75%;
+        left: 14%;
+    }
+
+    #cssmenu > ul > li > a {
+        padding: 25px 9px 24px 13px;
+        font-size: 13px;
+    }
+
+        #cssmenu > ul > li > a:hover {
+            padding: 25px 14px 24px 20px;
+            font-size: 13px;
+        }
+}
+
+@media only screen and (max-width: 800px) {
+    .fix-menu {
+        width: 92%;
+        left: 6%;
+    }
+
+    .bx-wrapper {
+        margin: 47px auto 25px;
+    }
+
+    .slider_top {
+        width: 82%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .slider_top {
+        margin-top: 4%;
+    }
+
+    .ul_menu {
+        margin-top: 2px;
+        background-color: #22A758;
+    }
+
+    #cssmenu.small-screen > ul > li > a:hover {
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+    #cssmenu.small-screen {
+        width: 100%;
+        margin-top: 13%;
+    }
+
+    .responsiveDropdown {
+        margin-top: 2px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .fix-menu {
+        width: 98%;
+        left: 3%;
+    }
+
+    #cssmenu.small-screen {
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .fix-menu {
+        width: 98%;
+        left: 3%;
+    }
+
+    #cssmenu.small-screen {
+        margin-top: 15%;
+    }
+
+    .logo_responsive {
+        width: 137px;
+        height: 90px;
+        margin-left: 0px;
+    }
+
+    #cssmenu.small-screen {
+        width: 95%;
+        margin-left: 6%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #cssmenu.small-screen {
+        width: 85%;
+        margin-left: 15%;
+        margin-top: 17%;
+        margin-bottom:1%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .pagelayoutIn {
+       margin-top: 61px;
+    }
+    
+     #cssmenu.small-screen {
+        width: 85%;
+        margin-left: 15%;
+        margin-top: 21%;
+        margin-bottom:1%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+   #cssmenu.small-screen {
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 23%;
+}
+}
+
+
+
+
+

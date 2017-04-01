@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{114CD990-AFDD-4EEC-AE82-D8A01A3A138D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LetsConnect.Data</RootNamespace>
+    <AssemblyName>LetsConnect.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Domains\Activity\Activity.cs" />
+    <Compile Include="Domains\Administator\Administator.cs" />
+    <Compile Include="Domains\BusinessCategory\BusinessCategory.cs" />
+    <Compile Include="Domains\Common\BaseDateEntity.cs" />
+    <Compile Include="Domains\Common\BaseEntity.cs" />
+    <Compile Include="Domains\Common\CustomUserClass.cs" />
+    <Compile Include="Domains\Contact\Contact.cs" />
+    <Compile Include="Domains\Customer\Customer.cs" />
+    <Compile Include="Domains\Customer\CustomerDetaile.cs" />
+    <Compile Include="Domains\Group\Group.cs" />
+    <Compile Include="Domains\Inquiry\Inquiry.cs" />
+    <Compile Include="Domains\Invite\Invite.cs" />
+    <Compile Include="Domains\Mapping\CustomerMapping.cs" />
+    <Compile Include="Domains\Mapping\GroupContactMapping.cs" />
+    <Compile Include="Domains\Mapping\GroupCustomerMapping.cs" />
+    <Compile Include="Domains\Mapping\RoleAdministratorMapping.cs" />
+    <Compile Include="Domains\Menu\Menu.cs" />
+    <Compile Include="Domains\Permission\Permission.cs" />
+    <Compile Include="Domains\Rating\Rating.cs" />
+    <Compile Include="Domains\Role\Role.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LetsConnect.Web.Framework\LetsConnect.Web.Framework.csproj">
+      <Project>{1d70bf88-9ab2-4aff-be3a-21b68f7a7bc7}</Project>
+      <Name>LetsConnect.Web.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,318 @@
+﻿
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/Service/LcService.js"></script>
+<script src="~/Scripts/Validations/Common/CommonValidation.js"></script>
+<script src="~/Scripts/Controller/Contact/ContactController.js"></script>
+
+<div class="right_col" role="main" ng-controller="ContactController as cc " ng-model="Contact" ng-cloak>
+    <div id="content-page">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="alert alert-success alert-dismissible fade in" role="alert" id="isSuccessMsg">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <label id="SuccessMsg"></label>
+                </div>
+                <div class="alert alert-danger alert-dismissible fade in" role="alert" id="isErrorMsg">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <label id="ErrorMsg"></label>
+                </div>
+            </div>
+        </div>
+
+        <div id="NonList">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Super Admin <small>Contact</small></h3>
+                </div>
+                <div class="title_right">
+                    <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-right top_search">
+                        <div class="input-group">
+                            <div class="btn btn-primary" ng-click="cc.BackToList()" value="">Back</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Register Contact</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Settings 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Settings 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <br />
+                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                        First Name <span class="required">*</span>
+                                    </label>
+                                    <select id="Admin" class="col-md-6 col-sm-6 col-xs-12" ng-model="cc.Contact.customerId" ng-options="customer.customerId as customer.firstName for customer in cc.CustomerList">
+                                        <option value="">    Please Select Contact..      </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                        Name <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input limit-to="50" type="text" id="last-name" ng-model="cc.Contact.name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                        Email Id <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input limit-to="100" type="text" id="last-name" ng-model="cc.Contact.emailId" name="emailId" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                        Mobile No <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input limit-to="15" type="text" id="last-name" ng-change="cc.OnlyNumber()" ng-model="cc.Contact.mobileNo" name="user-name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                        Website <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input limit-to="50" type="text" id="last-name" ng-model="cc.Contact.website" name="user-name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+
+                                        <div type="submit" ng-click="cc.AddContact(cc.Contact)" class="btn btn-primary btn-block btn-flat">Submit</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="List">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>SuperAdmin  <small> - Customer</small></h3>
+                </div>
+                <div class="title_right">
+                    <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-right top_search">
+                        <div class="input-group">
+                            <div class="btn btn-primary" ng-click="cc.AddNewSection()" value="">Add New</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Contact List</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Settings 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Settings 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="accordion" id="accordion2">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <span class="serach-section accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                            <i class="fa fa-search"></i> SEARCH
+                                        </span>
+                                    </div>
+                                    <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+                                        <div class="accordion-inner serach-section" style="margin-bottom:2%;">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form_group_support">
+                                                        <label class="col-md-4 padtop_lbl text_bold" for="inputText1">Name :</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control ng-pristine ng-untouched ng-valid" id="inputText1" @*ng-model-options="{debounce: 600}"*@ ng-model="cc.search.name" placeholder="Search By Name" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-group form_group_support">
+                                                        <label class="col-md-4 padtop_lbl text_bold" for="inputText1">Email :</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control ng-pristine ng-untouched ng-valid" id="inputText1" @*ng-model-options="{debounce: 600}"*@ ng-model="cc.search.emailId" placeholder="Search By Email Id" type="text">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form_group_support">
+                                                        <label class="col-md-4 padtop_lbl text_bold" for="inputText1">Mobile :</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control ng-pristine ng-untouched ng-valid" id="inputText1" @*ng-model-options="{debounce: 600}"*@ ng-model="cc.search.mobileNo" placeholder="Search By Mobile" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form_group_support">
+                                                        <label class="col-md-4 padtop_lbl text_bold" for="inputText1">Customer :</label>
+                                                        <div class="col-md-8">
+                                                            <select id="searchStatus" name="searchStatus"  ng-model="cc.search.customerId" ng-options="cc.customerId as (cc.firstName +' '+ cc.lastName) for cc in cc.CustomerList" @*ng-init="cc.search.customerID = options[0]"*@  ng-selected="{{cc.customerId == cc.search.customerID}}" class="form-control ng-pristine ng-valid ng-touched" ng-change="filterChange()">
+                                                                @*<option value="" ng-if="false">-- Select Customer --</option>*@ 
+                                                                <option value="">-- Select Customer --</option> 
+                                                                @*<option value="cu.customerId" ng-repeat="cu in cc.CustomerList">{{cu.firstName}} {{cu.lastName}}</option>*@
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="col-md-8">
+                                                            <div class="btn-group">
+                                                                <button class="btn btn-primary" id="Filter" name="btnFilter" type="button" ng-click="cc.filter()">Search</button>
+                                                                <button class="btn btn-default" id="Filter" name="btnFilter" type="button" ng-click="cc.resetfilter()">Reset</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer" style="margin-top:5%;">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_length" id="datatable-responsive_length">
+                                            <label>
+                                                Show
+                                                <select name="datatable-responsive_length" ng-options="intmvalue.value as intmvalue.Id for intmvalue in cc.selectvalues" ng-init="intmvalue.value=cc.entryLimit" ng-model="cc.entryLimit" aria-controls="datatable-responsive" ng-change="cc.filter()" class="form-control input-sm"></select> entries
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*{{cc.currentPage}}*@
+                                @*{{cc.entryLimit}}*@
+                                @*{{cc.items.length}}*@
+                                <div class="row" ng-show="cc.items.length > 0">
+                                    <div class="col-sm-12">
+                                        <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 152px;" aria-label="Position: activate to sort column ascending">Contact Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 26px;" aria-label="Age: activate to sort column ascending">Email Id</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 67px;" aria-label="Last name: activate to sort column ascending">Mobile No</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 67px;" aria-label="Last name: activate to sort column ascending">Website</th>
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 69px;" aria-sort="ascending" aria-label="First name: activate to sort column descending">Customer Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 146px;" aria-label="E-mail: activate to sort column ascending">Actions</th>    
+                                                  
+                                                 </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr role="row" class="odd" ng-repeat="ct in cc.filtered = cc.items | startFrom:(cc.currentPage-1)*cc.entryLimit | limitTo:cc.entryLimit">
+                                                   
+                                                    <td>{{ct.name}}</td>
+                                                    <td>{{ct.emailId}}</td>
+                                                    <td>{{ct.mobileNo}}</td>
+                                                    <td>{{ct.website}}</td>
+                                                    <td>{{ct.customerName}} </td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <button type="button" ng-click="cc.GetContactById(ct.contactId)" class="btn btn-primary" aria-label="edit"><i class="fa fa-edit"></i></button>
+                                                            <button type="button" ng-click="cc.DeleteContact(ct.contactId)" class="btn btn-danger" aria-delete="edit"><i class="fa fa-remove"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content" ng-hide="cc.items.length > 0">
+                                <h5 class="text-center">No Records To Dispaly.!</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <pagination page="cc.currentPage" max-size="cc.noOfPages" total-items="cc.totalItems" items-per-page="cc.entryLimit"></pagination>
+        <div class="pull-right margin-top-20p">
+            Showing
+            @*<span ng-show="cc.NcurrentPage = 1"> <b> 1 b </b></span>
+                <span ng-hide="cc.NcurrentPage > 1"> <b> {{(cc.NcurrentPage-1)*cc.entryLimit}}  </b> </span>
+                    To <b> {{(cc.NcurrentPage)*cc.entryLimit}} b </b> Of <b> {{cc.totalItems}} </b>Entries*@
+
+            <b><label ng-bind="cc.statrtPageFunction()"></label></b> To <b><label ng-bind="cc.endPageFunction()"></label> </b> Of <b> <label ng-bind="cc.totalPageFunction()"></label> </b> Entries
+        </div>
+    </div>
+    <div id="loading">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <img src="~/Content/Template/Images/loading_128.gif" class="margin-top-17p" />
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
